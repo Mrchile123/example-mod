@@ -16,10 +16,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Build Mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          bindings-update: false
           combine: true
           target: ${{ matrix.config.target }}
